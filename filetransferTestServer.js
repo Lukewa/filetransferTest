@@ -1,17 +1,14 @@
 var WebSocketServer = require('websocket').server;
 var http = require('http');
-var config = {
-    host: 'your host',
-    port: 0000
-};
+var config = require('./config.js');
 var counter = 0;
 var server = http.createServer(function(request, response) {
     console.log((new Date()) + ' Received request for ' + request.url);
     response.writeHead(404);
     response.end();
 });
-server.listen(config.server.port, config.server.host, function() {
-    console.log((new Date()) + ' Server is listening on port ' + config.server.port + ' on address: ' + config.server.host);
+server.listen(config.port, config.host, function() {
+    console.log((new Date()) + ' Server is listening on port ' + config.port + ' on address: ' + config.host);
 });
 
 wsServer = new WebSocketServer({

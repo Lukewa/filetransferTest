@@ -1,5 +1,6 @@
 var WebSocketClient = require('websocket').client;
 var fs = require('fs');
+var config = require('./config.js');
 
 var client = new WebSocketClient({
     maxReceivedMessageSize: 1073741824,  // 1gb
@@ -79,4 +80,8 @@ function sendBigTestMessage(connection) {
     });
 };
 
-client.connect('ws://' + '[2a01:4f8:151:7ff7:117:5::1]' + ':' + '5801' + '/', 'echo-protocol');
+// IPv6
+client.connect('ws://' + '[' + config.host + ']' + ':' + config.port + '/', 'echo-protocol');
+
+// IPv4
+// client.connect('ws://' + config.host + ':' + 'config.server' + '/', 'echo-protocol');
