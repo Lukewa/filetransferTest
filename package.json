@@ -1,0 +1,11 @@
+{
+	"name": "filetransferTest",
+	"private": true,
+	"description": "",
+	"version": "0.0.1",
+	"author": "Lukas Waldmann <lukas.waldmann@klab-berlin.com>",
+	"dependencies": {
+		"websocket": "git://github.com/Worlize/WebSocket-Node.git#master"
+	},
+	"engine": "node >= 0.10.26"
+}
